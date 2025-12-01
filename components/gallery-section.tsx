@@ -11,10 +11,6 @@ const galleryImages = [
   { src: "/paris-eiffel-tower-sunset-romantic-beautiful.jpg", alt: "Paris", location: "Paris, France" },
   { src: "/maldives-beach-crystal-clear-water-tropical.jpg", alt: "Maldives Beach", location: "Maldives" },
   { src: "/cappadocia-turkey-hot-air-balloons-sunrise.jpg", alt: "Cappadocia", location: "Turkey" },
-  { src: "/singapore-marina-bay-sands-night-cityscape.jpg", alt: "Singapore", location: "Singapore" },
-  { src: "/placeholder.svg?height=800&width=800", alt: "Santorini", location: "Greece" },
-  { src: "/placeholder.svg?height=600&width=800", alt: "Bali", location: "Indonesia" },
-  { src: "/placeholder.svg?height=800&width=1000", alt: "Swiss Alps", location: "Switzerland" },
 ]
 
 export function GallerySection() {
@@ -25,7 +21,7 @@ export function GallerySection() {
   })
 
   return (
-    <section id="gallery" className="py-24 lg:py-32 bg-background relative overflow-hidden" ref={ref}>
+    <section id="gallery" className="py-10 lg:py-32 bg-background relative overflow-hidden" ref={ref}>
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/3 rounded-full blur-[200px]" />
 

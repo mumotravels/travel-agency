@@ -28,7 +28,7 @@ export function ContactForm() {
 
       if (result.success) {
         setIsSuccess(true)
-        ;(e.target as HTMLFormElement).reset()
+          ; (e.target as HTMLFormElement).reset()
       } else {
         setError(result.error || "Something went wrong. Please try again.")
       }
@@ -86,35 +86,7 @@ export function ContactForm() {
 
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone Number</Label>
-                <Input id="phone" name="phone" type="tel" placeholder="+1 (555) 000-0000" className="h-12" />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="subject">Subject *</Label>
-                <Select name="subject" required>
-                  <SelectTrigger className="h-12">
-                    <SelectValue placeholder="Select a subject" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="general">General Inquiry</SelectItem>
-                    <SelectItem value="booking">Booking Question</SelectItem>
-                    <SelectItem value="visa">Visa Services</SelectItem>
-                    <SelectItem value="tour">Tour Packages</SelectItem>
-                    <SelectItem value="support">Customer Support</SelectItem>
-                    <SelectItem value="feedback">Feedback</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="destination">Preferred Destination (Optional)</Label>
-                <Input
-                  id="destination"
-                  name="destination"
-                  placeholder="e.g., Paris, Tokyo, Maldives"
-                  className="h-12"
-                />
+                <Input id="phone" name="phone" type="tel" placeholder="+88017 0000-0000" className="h-12" />
               </div>
 
               <div className="space-y-2">

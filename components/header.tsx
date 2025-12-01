@@ -11,9 +11,7 @@ import { cn } from "@/lib/utils"
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { href: "/#packages", label: "Packages" },
   { href: "/services", label: "Services" },
-  { href: "/#gallery", label: "Gallery" },
   { href: "/blog", label: "Blog" },
 ]
 
@@ -118,9 +116,12 @@ export function Header() {
               "hover:shadow-xl hover:shadow-primary/30",
               "transition-all duration-300 hover:scale-[1.02]",
             )}
-          >
-            <span className="relative z-10">Get Free Consultation</span>
-            <div className="absolute inset-0 bg-linear-to-r from-transparent via-card/20 to-transparent -translate-x-full hover:translate-x-full transition-transform duration-700" />
+
+            asChild>
+            <Link href="/contact">
+              <span className="relative z-10">Book Now</span>
+              <div className="absolute inset-0 bg-linear-to-r from-transparent via-card/20 to-transparent -translate-x-full hover:translate-x-full transition-transform duration-700" />
+            </Link>
           </Button>
         </div>
 

@@ -41,11 +41,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <main className="min-h-screen">
-      <Header />
+    <main className="min-h-screen px-4 md:px-20">
       <BlogPostContent post={post} />
-      <Footer />
-      <ScrollToTop />
     </main>
   )
 }
