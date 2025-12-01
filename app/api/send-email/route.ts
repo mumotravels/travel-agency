@@ -6,8 +6,6 @@ interface ContactFormData {
   lastName: string
   email: string
   phone?: string
-  subject: string
-  destination?: string
   message: string
 }
 
@@ -16,7 +14,7 @@ export async function POST(request: Request) {
     const data: ContactFormData = await request.json()
 
     // Validate required fields
-    if (!data.firstName || !data.lastName || !data.email || !data.subject || !data.message) {
+    if (!data.firstName || !data.lastName || !data.email || !data.message) {
       return NextResponse.json({ success: false, error: "Please fill in all required fields." }, { status: 400 })
     }
 
@@ -26,15 +24,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: false, error: "Please enter a valid email address." }, { status: 400 })
     }
 
-    const subjectLabels: Record<string, string> = {
-      general: "General Inquiry",
-      booking: "Booking Question",
-      visa: "Visa Services",
-      tour: "Tour Packages",
-      support: "Customer Support",
-      feedback: "Feedback",
-      other: "Other",
-    }
+    // Construct HTML email content
 
     const emailHtml = `
       <!DOCTYPE html>
@@ -59,14 +49,7 @@ export async function POST(request: Request) {
                   
                   <!-- Content -->
                   <tr>
-                    <td style="padding: 40px;">
-                      <!-- Subject Badge -->
-                      <div style="margin-bottom: 30px;">
-                        <span style="background-color: #0ea5e9; color: #ffffff; padding: 8px 16px; border-radius: 20px; font-size: 14px; font-weight: 600;">
-                          ${subjectLabels[data.subject] || data.subject}
-                        </span>
-                      </div>
-                      
+                    <td style="padding: 40px;">                      
                       <!-- Contact Details -->
                       <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 30px;">
                         <tr>
@@ -83,9 +66,8 @@ export async function POST(request: Request) {
                             </p>
                           </td>
                         </tr>
-                        ${
-                          data.phone
-                            ? `
+                        ${data.phone
+        ? `
                         <tr>
                           <td style="padding: 15px 0; border-bottom: 1px solid #e4e4e7;">
                             <p style="margin: 0; color: #71717a; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Phone Number</p>
@@ -95,20 +77,8 @@ export async function POST(request: Request) {
                           </td>
                         </tr>
                         `
-                            : ""
-                        }
-                        ${
-                          data.destination
-                            ? `
-                        <tr>
-                          <td style="padding: 15px 0; border-bottom: 1px solid #e4e4e7;">
-                            <p style="margin: 0; color: #71717a; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Preferred Destination</p>
-                            <p style="margin: 5px 0 0 0; color: #18181b; font-size: 16px; font-weight: 600;">${data.destination}</p>
-                          </td>
-                        </tr>
-                        `
-                            : ""
-                        }
+        : ""
+      }
                       </table>
                       
                       <!-- Message -->
@@ -119,7 +89,7 @@ export async function POST(request: Request) {
                       
                       <!-- Reply Button -->
                       <div style="text-align: center;">
-                        <a href="mailto:${data.email}?subject=Re: ${subjectLabels[data.subject] || data.subject}" 
+                        <a href="mailto:${data.email}" 
                            style="display: inline-block; background-color: #0ea5e9; color: #ffffff; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px;">
                           Reply to ${data.firstName}
                         </a>
@@ -162,7 +132,7 @@ export async function POST(request: Request) {
       from: `"GlobalVoyage" <${process.env.SMTP_USER}>`,
       to: process.env.CONTACT_EMAIL || process.env.SMTP_USER,
       replyTo: data.email,
-      subject: `[GlobalVoyage] ${subjectLabels[data.subject] || data.subject} from ${data.firstName} ${data.lastName}`,
+      subject: `[GlobalVoyage] from ${data.firstName} ${data.lastName}`,
       html: emailHtml,
     })
 
