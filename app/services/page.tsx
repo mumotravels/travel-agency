@@ -5,9 +5,9 @@ import { ServiceProcess } from "@/components/service-process"
 import { ServicesCTA } from "@/components/services-cta"
 
 export const metadata: Metadata = {
-  title: "Our Services | GlobalVoyage - Complete Travel Solutions",
+  title: "Our Services | Mumo Travels & Tours - Complete Travel Solutions",
   description:
-    "Explore our comprehensive travel services including visa processing, flight booking, tour planning, hotel reservations, and more.",
+    "Explore our comprehensive travel services including visa processing, flight booking, tour planning and more.",
 }
 
 export default function ServicesPage() {

@@ -1,7 +1,7 @@
 "use client"
 
 import { useInView } from "react-intersection-observer"
-import { Award, Clock, Heart, Shield, Users, Headphones } from "lucide-react"
+import { Award, Clock, Heart, Shield, Users, Headphones, MoonStar } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const stats = [
@@ -15,7 +15,7 @@ const features = [
   { icon: Shield, title: "Visa Support", description: "Expert visa processing for all countries" },
   { icon: Clock, title: "Flight Booking", description: "Best deals on domestic & international flights" },
   { icon: Heart, title: "Tour Planning", description: "Customized itineraries for every traveler" },
-  { icon: Award, title: "Hotel Reservations", description: "Premium accommodations worldwide" },
+  { icon: MoonStar, title: "Umrah & Hajj Packages", description: "Spiritual journey packages with complete arrangements" },
 ]
 
 export function AboutSection() {
@@ -61,7 +61,7 @@ export function AboutSection() {
               Your Trusted Partner for Global Travel
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Since 2009, GlobalVoyage has been helping travelers explore the world with confidence. We combine
+              Since 2009, Mumo Travels & Tours has been helping travelers explore the world with confidence. We combine
               expertise, passion, and personalized service to create unforgettable journeys. Whether you need visa
               assistance, flight bookings, or complete tour packages, our dedicated team is here to make your travel
               dreams a reality.

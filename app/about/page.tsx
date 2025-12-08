@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { PageHeader } from "@/components/page-header"
 import { AboutContent } from "@/components/about-content"
 import { MilestonesSection } from "@/components/milestones-section"
+import { PartnersSection } from "@/components/partners-section"
 
 export const metadata: Metadata = {
   title: "About Us | Mumo Travels & Tours - Your Trusted Travel Partner",
@@ -20,6 +21,7 @@ export default function AboutPage() {
       <div className="md:px-20 px-4">
         <AboutContent />
         <MilestonesSection />
+        <PartnersSection />
       </div>
     </main>
   )

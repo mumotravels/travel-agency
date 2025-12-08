@@ -5,13 +5,8 @@ import { Button } from "@/components/ui/button"
 import {
   Plane,
   FileText,
-  Hotel,
   Map,
-  GraduationCap,
   Compass,
-  Shield,
-  Briefcase,
-  Car,
   ArrowRight,
   CheckCircle2,
 } from "lucide-react"

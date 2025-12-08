@@ -32,7 +32,7 @@ const steps = [
 
 export function ServiceProcess() {
   return (
-    <section className="py-20 lg:py-32 bg-gradient-to-b from-secondary/30 to-background relative overflow-hidden">
+    <section className="py-20 lg:py-32 bg-linear-to-b from-secondary/30 to-background relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-sky/5 rounded-full blur-3xl" />
@@ -54,12 +54,12 @@ export function ServiceProcess() {
               <div className="relative group">
                 {/* Connector Line */}
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-12 left-[60%] w-full h-0.5 bg-gradient-to-r from-primary/30 to-transparent" />
+                  <div className="hidden lg:block absolute top-12 left-[60%] w-full h-0.5 bg-linear-to-r from-primary/30 to-transparent" />
                 )}
 
                 <div className="text-center">
                   <div className="relative inline-block mb-6">
-                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center group-hover:from-primary group-hover:to-primary/80 transition-all duration-500">
+                    <div className="w-24 h-24 rounded-full bg-linear-to-br from-primary/10 to-primary/5 flex items-center justify-center group-hover:from-primary group-hover:to-primary/80 transition-all duration-500">
                       <step.icon className="h-10 w-10 text-primary group-hover:text-primary-foreground transition-colors" />
                     </div>
                     <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold text-sm flex items-center justify-center">
