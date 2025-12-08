@@ -43,48 +43,12 @@ const services = [
     color: "from-teal-500 to-teal-600",
   },
   {
-    icon: Hotel,
-    title: "Hotel & Accommodation",
-    description: "Premium accommodations worldwide from budget-friendly to luxury resorts at competitive prices.",
-    features: ["Best rate guarantee", "Free cancellation", "Loyalty rewards", "24/7 support"],
-    color: "from-indigo-500 to-indigo-600",
-  },
-  {
-    icon: GraduationCap,
-    title: "Student Visa Consultancy",
-    description: "Comprehensive support for students seeking education abroad with university placement assistance.",
-    features: ["University selection", "Application support", "Visa guidance", "Pre-departure briefing"],
-    color: "from-purple-500 to-purple-600",
-    popular: true,
-  },
-  {
     icon: Compass,
     title: "Umrah & Hajj Packages",
     description: "Spiritual journey packages with complete arrangements for a blessed pilgrimage experience.",
     features: ["5-star accommodations", "Guided tours", "Transport included", "Visa processing"],
     color: "from-emerald-500 to-emerald-600",
-  },
-  {
-    icon: Briefcase,
-    title: "Corporate Travel",
-    description: "End-to-end business travel solutions for companies of all sizes with dedicated account management.",
-    features: ["Corporate discounts", "Travel policy setup", "Expense management", "Reporting"],
-    color: "from-orange-500 to-orange-600",
-  },
-  {
-    icon: Shield,
-    title: "Travel Insurance",
-    description: "Comprehensive travel insurance coverage for medical emergencies, trip cancellations, and more.",
-    features: ["Medical coverage", "Trip cancellation", "Baggage protection", "24/7 assistance"],
-    color: "from-rose-500 to-rose-600",
-  },
-  {
-    icon: Car,
-    title: "Transport Services",
-    description: "Reliable airport transfers, car rentals, and ground transportation services worldwide.",
-    features: ["Airport transfers", "Car rentals", "Private chauffeur", "Group transport"],
-    color: "from-cyan-500 to-cyan-600",
-  },
+  }
 ]
 
 export function ServicesGrid() {
@@ -117,12 +81,12 @@ export function ServicesGrid() {
 
                 {/* Gradient Background on Hover */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                  className={`absolute inset-0 bg-linear-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
                 />
 
                 <div className="relative">
                   <div
-                    className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${service.color} mb-6 group-hover:scale-110 transition-transform duration-300`}
+                    className={`inline-flex p-4 rounded-2xl bg-linear-to-br ${service.color} mb-6 group-hover:scale-110 transition-transform duration-300`}
                   >
                     <service.icon className="h-7 w-7 text-white" />
                   </div>
@@ -136,7 +100,7 @@ export function ServicesGrid() {
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
                         {feature}
                       </li>
                     ))}
