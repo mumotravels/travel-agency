@@ -74,7 +74,7 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
       <section className="pb-8 lg:pb-12">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <AnimatedSection direction="up" delay={100}>
-            <div className="relative aspect-[21/9] rounded-xl lg:rounded-2xl overflow-hidden">
+            <div className="relative aspect-21/9 rounded-xl lg:rounded-2xl overflow-hidden">
               <img src={post.image || "/placeholder.svg"} alt={post.title} className="w-full h-full object-cover" />
             </div>
           </AnimatedSection>
@@ -172,7 +172,7 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
               <AnimatedSection key={relatedPost.slug} direction="up" delay={index * 100}>
                 <Link href={`/blog/${relatedPost.slug}`}>
                   <Card className="group overflow-hidden border-border hover:border-primary/30 shadow-none hover:shadow-xl transition-all duration-500 h-full bg-card">
-                    <div className="relative aspect-[16/10] overflow-hidden">
+                    <div className="relative aspect-16/10 overflow-hidden">
                       <img
                         src={relatedPost.image || "/placeholder.svg"}
                         alt={relatedPost.title}
