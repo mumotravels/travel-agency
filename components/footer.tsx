@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Plane, Facebook, Instagram, Youtube, MapPin, Phone, Mail, ArrowRight, Twitter } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import Image from "next/image"
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -76,8 +77,8 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="inline-flex items-center gap-2 md:gap-3 mb-4 md:mb-6 group">
-              <div className="p-2 md:p-2.5 rounded-lg md:rounded-xl bg-linear-to-br from-primary to-primary/80 shadow-lg shadow-primary/25 group-hover:shadow-xl group-hover:shadow-primary/30 transition-all">
-                <Plane className="h-5 w-5 md:h-6 md:w-6 text-primary-foreground" />
+              <div className=" rounded-lg md:rounded-xl bg-linear-to-br from-primary to-primary/80 shadow-lg shadow-primary/25 group-hover:shadow-xl group-hover:shadow-primary/30 transition-all">
+                <Image src="/icon.png" alt="Mumo Travels & Tours Logo" width={50} height={50} className="" priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
               </div>
               <div className="flex flex-col">
                 <span className="text-lg md:text-xl font-bold leading-tight">

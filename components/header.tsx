@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { Menu, Plane } from "lucide-react"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -45,19 +46,13 @@ export function Header() {
         <Link href="/" className="flex items-center gap-2 md:gap-3 group">
           <div
             className={cn(
-              "relative p-2 md:p-2.5 rounded-lg md:rounded-xl transition-all duration-500 overflow-hidden",
+              "relative  rounded-lg md:rounded-xl transition-all duration-500 overflow-hidden",
               showSolidHeader
                 ? "bg-linear-to-br from-primary to-primary/80 shadow-lg shadow-primary/25"
                 : "bg-card/20 backdrop-blur-md border border-card/20",
             )}
           >
-            <Plane
-              className={cn(
-                "h-5 w-5 md:h-6 md:w-6 transition-all duration-300 group-hover:rotate-12",
-                showSolidHeader ? "text-primary-foreground" : "text-card",
-              )}
-            />
-            <div className="absolute inset-0 bg-linear-to-tr from-transparent via-card/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <Image src="/icon.png" alt="Mumo Travels & Tours Logo" width={50} height={50} className="" priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
           </div>
           <div className="flex flex-col">
             <span
