@@ -7,7 +7,7 @@ import { ServicesCTA } from "@/components/services-cta"
 export const metadata: Metadata = {
   title: "Our Services | Mumo Travels & Tours - Complete Travel Solutions",
   description:
-    "Explore our comprehensive travel services including visa processing, flight booking, tour planning and more.",
+    "Explore our comprehensive travel services including air ticketing, tour packages, hotel booking, visa assistance, and more.",
 }
 
 export default function ServicesPage() {
@@ -18,7 +18,7 @@ export default function ServicesPage() {
         subtitle="Comprehensive travel solutions tailored to your needs"
         breadcrumb="Services"
       />
-      <div className="md:px-20 px-4">
+      <div className="px-4 md:px-6 lg:px-20">
         <ServicesGrid />
         <ServiceProcess />
       </div>

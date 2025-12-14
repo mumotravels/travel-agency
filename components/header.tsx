@@ -41,23 +41,30 @@ export function Header() {
           : "bg-linear-to-b from-foreground/20 to-transparent py-3 md:py-5",
       )}
     >
-      <div className="container mx-auto px-3 md:px-20 flex items-center justify-between">
+      <div className="container mx-auto px-4 md:px-6 lg:px-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 md:gap-3 group">
           <div
             className={cn(
-              "relative  rounded-lg md:rounded-xl transition-all duration-500 overflow-hidden",
+              "relative w-10 h-10 md:w-12 md:h-12 rounded-lg transition-all duration-500 overflow-hidden shrink-0",
               showSolidHeader
                 ? "bg-linear-to-br from-primary to-primary/80 shadow-lg shadow-primary/25"
                 : "bg-card/20 backdrop-blur-md border border-card/20",
             )}
           >
-            <Image src="/icon.png" alt="Mumo Travels & Tours Logo" width={50} height={50} className="" priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+            <Image
+              src={"/icon.png"}
+              alt="Mumo Travels & Tours Logo"
+              fill
+              className="object-contain p-1.5"
+              priority
+              sizes="(max-width: 768px) 40px, 48px"
+            />
           </div>
           <div className="flex flex-col">
             <span
               className={cn(
-                "text-lg md:text-xl font-bold transition-colors duration-300 leading-tight",
+                "text-base md:text-lg lg:text-xl font-bold transition-colors duration-300 leading-tight",
                 showSolidHeader ? "text-foreground" : "text-card",
               )}
             >
@@ -65,7 +72,7 @@ export function Header() {
             </span>
             <span
               className={cn(
-                "text-[9px] md:text-[10px] uppercase tracking-[0.15em] md:tracking-[0.2em] font-medium transition-colors duration-300",
+                "text-[8px] md:text-[9px] lg:text-[10px] uppercase tracking-[0.15em] md:tracking-[0.2em] font-medium transition-colors duration-300 whitespace-nowrap",
                 showSolidHeader ? "text-muted-foreground" : "text-card/70",
               )}
             >
@@ -82,9 +89,7 @@ export function Header() {
               href={link.href}
               className={cn(
                 "relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group",
-                showSolidHeader
-                  ? "text-foreground/80 hover:text-foreground"
-                  : "text-card/90",
+                showSolidHeader ? "text-foreground/80 hover:text-foreground" : "text-card/90 hover:text-card",
                 pathname === link.href && (showSolidHeader ? "text-primary bg-primary/5" : "text-card bg-card/15"),
               )}
             >
@@ -104,7 +109,7 @@ export function Header() {
           <Button
             size="lg"
             className={cn(
-              "relative overflow-hidden rounded-full px-7 font-semibold",
+              "relative overflow-hidden rounded-full px-6 lg:px-7 font-semibold",
               "bg-linear-to-r from-primary to-primary/90",
               "hover:from-primary/90 hover:to-primary",
               "text-primary-foreground shadow-lg shadow-primary/25",
@@ -127,14 +132,14 @@ export function Header() {
               variant="ghost"
               size="icon"
               className={cn(
-                "rounded-lg md:rounded-xl h-9 w-9 md:h-10 md:w-10",
+                "rounded-lg md:rounded-xl h-9 w-9 md:h-10 md:w-10 shrink-0",
                 showSolidHeader ? "text-foreground hover:bg-secondary" : "text-card hover:bg-card/10",
               )}
             >
               <Menu className="h-5 w-5 md:h-6 md:w-6" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-72 md:w-80 bg-card border-l border-border/50">
+          <SheetContent side="right" className="w-[280px] sm:w-80 bg-card border-l border-border/50">
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
             <div className="flex flex-col h-full py-4 md:py-6">
               <div className="flex items-center gap-2 md:gap-3 mb-6 md:mb-10">

@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, Play } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const slides = [
@@ -86,12 +87,12 @@ export function HeroSection() {
         style={{ animationDelay: "1s" }}
       />
 
-      {/* Content - Reduced padding on mobile */}
-      <div className="relative z-10 h-full flex items-center px-3 md:px-20">
-        <div className="container mx-auto px-3 md:px-4">
+      {/* Content - Responsive padding */}
+      <div className="relative z-10 h-full flex items-center">
+        <div className="container mx-auto px-4 md:px-6 lg:px-20">
           <div className="max-w-4xl">
-            {/* Location badge - Smaller on mobile */}
-            <div className="overflow-hidden mb-4 md:mb-6">
+            {/* Location badge - Responsive sizing */}
+            <div className="overflow-hidden mb-3 md:mb-6">
               <div
                 key={`location-${currentSlide}`}
                 className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-card/10 backdrop-blur-md border border-card/20 animate-fade-in-up"
@@ -103,11 +104,11 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Main title - Smaller text and spacing on mobile */}
-            <div className="overflow-hidden mb-4 md:mb-6">
+            {/* Main title - Responsive text sizing */}
+            <div className="overflow-hidden mb-3 md:mb-6">
               <h1
                 key={`title-${currentSlide}`}
-                className="text-3xl md:text-6xl lg:text-7xl font-bold text-card leading-[1.1] animate-fade-in-up text-balance"
+                className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-card leading-[1.15] md:leading-[1.1] animate-fade-in-up text-balance"
               >
                 {slides[currentSlide].title.split(" ").map((word, i) => (
                   <span
@@ -121,20 +122,20 @@ export function HeroSection() {
               </h1>
             </div>
 
-            {/* Subtitle - Smaller on mobile */}
-            <div className="overflow-hidden mb-6 md:mb-10">
+            {/* Subtitle - Responsive sizing */}
+            <div className="overflow-hidden mb-4 md:mb-10">
               <p
                 key={`subtitle-${currentSlide}`}
-                className="text-sm md:text-xl text-card/80 max-w-2xl animate-fade-in-up leading-relaxed"
+                className="text-xs sm:text-sm md:text-lg lg:text-xl text-card/80 max-w-2xl animate-fade-in-up leading-relaxed"
                 style={{ animationDelay: "300ms" }}
               >
                 {slides[currentSlide].subtitle}
               </p>
             </div>
 
-            {/* CTA Buttons - Tighter gap and smaller buttons on mobile */}
+            {/* CTA Buttons - Responsive layout and sizing */}
             <div
-              className="flex flex-wrap items-center gap-2 md:gap-4 animate-fade-in-up"
+              className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2 md:gap-4 animate-fade-in-up"
               style={{ animationDelay: "400ms" }}
             >
               <Button
@@ -145,10 +146,14 @@ export function HeroSection() {
                   "rounded-full px-5 md:px-8 py-4 md:py-6 text-sm md:text-base font-semibold",
                   "shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40",
                   "transition-all duration-300 hover:scale-[1.02]",
+                  "w-full sm:w-auto",
                 )}
+                asChild
               >
-                <span className="relative z-10">View Packages</span>
-                <div className="absolute inset-0 bg-linear-to-r from-transparent via-card/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                <Link href="/services">
+                  <span className="relative z-10">View Packages</span>
+                  <div className="absolute inset-0 bg-linear-to-r from-transparent via-card/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                </Link>
               </Button>
               <Button
                 size="lg"
@@ -159,36 +164,31 @@ export function HeroSection() {
                   "hover:bg-card hover:text-foreground hover:border-card",
                   "rounded-full px-5 md:px-8 py-4 md:py-6 text-sm md:text-base font-semibold",
                   "transition-all duration-300",
+                  "w-full sm:w-auto",
                 )}
+                asChild
               >
-                Book Now
+                <Link href="/contact">Book Now</Link>
               </Button>
-              <button className="group hidden sm:flex items-center gap-2 md:gap-3 ml-2 md:ml-4">
-                <span className="flex items-center justify-center w-10 h-10 md:w-14 md:h-14 rounded-full bg-card/10 backdrop-blur-md border border-card/20 group-hover:bg-card group-hover:scale-110 transition-all duration-300">
-                  <Play className="h-4 w-4 md:h-5 md:w-5 text-card group-hover:text-primary fill-current ml-0.5" />
-                </span>
-                <span className="text-card/80 text-sm md:text-base font-medium group-hover:text-card transition-colors">
-                  Watch Video
-                </span>
-              </button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Navigation Arrows - Smaller and closer to edges on mobile */}
+      {/* Navigation Arrows - Responsive positioning and sizing */}
       <button
         onClick={prevSlide}
         disabled={isTransitioning}
         className={cn(
-          "absolute left-2 md:left-10 top-1/2 -translate-y-1/2 z-20",
-          "w-10 h-10 md:w-14 md:h-14 rounded-full",
+          "absolute left-2 sm:left-4 md:left-10 top-1/2 -translate-y-1/2 z-20",
+          "w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full",
           "bg-card/10 backdrop-blur-md border border-card/20",
           "text-card hover:bg-card hover:text-foreground",
           "flex items-center justify-center",
           "transition-all duration-300 hover:scale-110",
           "disabled:opacity-50 disabled:pointer-events-none",
         )}
+        aria-label="Previous slide"
       >
         <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
       </button>
@@ -196,29 +196,33 @@ export function HeroSection() {
         onClick={nextSlide}
         disabled={isTransitioning}
         className={cn(
-          "absolute right-2 md:right-10 top-1/2 -translate-y-1/2 z-20",
-          "w-10 h-10 md:w-14 md:h-14 rounded-full",
+          "absolute right-2 sm:right-4 md:right-10 top-1/2 -translate-y-1/2 z-20",
+          "w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full",
           "bg-card/10 backdrop-blur-md border border-card/20",
           "text-card hover:bg-card hover:text-foreground",
           "flex items-center justify-center",
           "transition-all duration-300 hover:scale-110",
           "disabled:opacity-50 disabled:pointer-events-none",
         )}
+        aria-label="Next slide"
       >
         <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
       </button>
 
-      {/* Slide Indicators - Smaller on mobile */}
-      <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 md:gap-3">
+      {/* Slide Indicators - Responsive sizing and positioning */}
+      <div className="absolute bottom-4 sm:bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 md:gap-3">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => handleSlideChange(index)}
             disabled={isTransitioning}
             className={cn(
-              "relative h-2 md:h-3 rounded-full transition-all duration-500 overflow-hidden",
-              index === currentSlide ? "w-7 md:w-10 bg-primary" : "w-2 md:w-3 bg-card/40 hover:bg-card/60",
+              "relative h-1.5 md:h-2 lg:h-3 rounded-full transition-all duration-500 overflow-hidden",
+              index === currentSlide
+                ? "w-6 md:w-8 lg:w-10 bg-primary"
+                : "w-1.5 md:w-2 lg:w-3 bg-card/40 hover:bg-card/60",
             )}
+            aria-label={`Go to slide ${index + 1}`}
           >
             {index === currentSlide && (
               <span
@@ -230,8 +234,8 @@ export function HeroSection() {
         ))}
       </div>
 
-      {/* Scroll hint */}
-      <div className="absolute bottom-10 right-10 z-20 hidden lg:flex flex-col items-center gap-3">
+      {/* Scroll hint - Hide on small screens */}
+      <div className="absolute bottom-10 right-10 z-20 hidden xl:flex flex-col items-center gap-3">
         <span className="text-card/60 text-xs tracking-[0.3em] uppercase rotate-90 origin-center translate-x-6 mb-4">
           Scroll
         </span>
