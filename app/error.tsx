@@ -18,7 +18,7 @@ export default function Error({
     }, [error])
 
     return (
-        <main className="min-h-screen flex items-center justify-center bg-background relative overflow-hidden">
+        <main className="min-h-screen py-20 md:py-24 flex items-center justify-center bg-background relative overflow-hidden">
             {/* Background decorative elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-20 left-10 w-64 h-64 bg-destructive/5 rounded-full blur-3xl" />

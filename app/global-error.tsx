@@ -13,7 +13,7 @@ export default function GlobalError({
     return (
         <html>
             <body>
-                <main className="min-h-screen flex items-center justify-center bg-slate-50">
+                <main className="min-h-screen py-20 md:py-24 flex items-center justify-center bg-slate-50">
                     <div className="container px-4 md:px-6">
                         <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
                             {/* Warning icon */}

@@ -64,7 +64,7 @@ export function ServicePackagesGrid({ activeService }: ServicePackagesGridProps)
                   {/* Actions */}
                   <div className="flex gap-2">
                     <Button asChild className="flex-1" size="sm">
-                      <Link href={`/services/${service.slug}/${pkg.id}`}>View Details</Link>
+                      <Link href={`/contact`}>View Details</Link>
                     </Button>
                     <Button variant="outline" size="sm" className="shrink-0 bg-transparent" asChild>
                       <a

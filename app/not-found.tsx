@@ -4,7 +4,7 @@ import { Compass, Home, MapPin, ArrowLeft } from "lucide-react"
 
 export default function NotFound() {
     return (
-        <main className="min-h-screen flex items-center justify-center bg-background relative overflow-hidden">
+        <main className="min-h-screen py-20 md:py-24 flex items-center justify-center bg-background relative overflow-hidden">
             {/* Background decorative elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
@@ -69,26 +69,6 @@ export default function NotFound() {
                                 Contact Us
                             </Link>
                         </Button>
-                    </div>
-
-                    {/* Quick links */}
-                    <div className="mt-10 md:mt-12 pt-6 md:pt-8 border-t border-border w-full">
-                        <p className="text-xs md:text-sm text-muted-foreground mb-4">Or explore these popular destinations:</p>
-                        <div className="flex flex-wrap justify-center gap-2 md:gap-3">
-                            {[
-                                { label: "Services", href: "/services" },
-                                { label: "About Us", href: "/about" },
-                                { label: "Blog", href: "/blog" },
-                            ].map((link) => (
-                                <Link
-                                    key={link.href}
-                                    href={link.href}
-                                    className="px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
-                                >
-                                    {link.label}
-                                </Link>
-                            ))}
-                        </div>
                     </div>
                 </div>
             </div>
