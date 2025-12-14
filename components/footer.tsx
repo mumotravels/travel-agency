@@ -3,6 +3,7 @@ import { Plane, Facebook, Instagram, Youtube, MapPin, Phone, Mail, ArrowRight, T
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Image from "next/image"
+import { servicesData } from "@/lib/services-data"
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -139,14 +140,14 @@ export function Footer() {
               <span className="absolute -bottom-2 left-0 w-8 md:w-10 h-1 bg-linear-to-r from-primary to-primary/50 rounded-full" />
             </h4>
             <ul className="space-y-2 md:space-y-3">
-              {services.map((service, index) => (
+              {servicesData.slice(0, 5).map((service, index) => (
                 <li key={index}>
                   <Link
-                    href={service.href}
+                    href={service.slug}
                     className="text-white/60 hover:text-primary hover:translate-x-2 transition-all inline-flex items-center gap-2 group text-sm md:text-base"
                   >
                     <ArrowRight className="h-3 w-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                    {service.name}
+                    {service.title}
                   </Link>
                 </li>
               ))}
@@ -185,15 +186,15 @@ export function Footer() {
                   </span>
                 </a>
               </li>
-              <li>
+              <li className="text-[12px]">
                 <a
                   href="mailto:mumotravelsandtours@gmail.com"
                   className="flex items-center gap-3 md:gap-4 group cursor-pointer"
                 >
-                  <div className="p-2 md:p-2.5 rounded-lg md:rounded-xl bg-white/5 border border-white/10 group-hover:bg-primary group-hover:border-primary transition-all shrink-0">
+                  <div className="px-2 md:p-2.5 rounded-lg md:rounded-xl bg-white/5 border border-white/10 group-hover:bg-primary group-hover:border-primary transition-all shrink-0">
                     <Mail className="h-3.5 w-3.5 md:h-4 md:w-4" />
                   </div>
-                  <span className="text-white/60 text-sm md:text-base group-hover:text-primary transition-colors">
+                  <span className="text-white/60 text-[12px] md:text-base group-hover:text-primary transition-colors">
                     mumotravelsandtours@gmail.com
                   </span>
                 </a>
