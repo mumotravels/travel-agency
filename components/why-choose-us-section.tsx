@@ -28,8 +28,8 @@ const reasons = [
 ]
 
 const highlights = [
-  "Licensed & IATA Certified Agency",
-  "Personalized Travel Experiences",
+  "Govt Licenses Approved",
+  "Ministry of Civil Aviation and Tourism Approved",
   "Secure Online Booking",
   "No Hidden Charges",
   "Flexible Payment Options",

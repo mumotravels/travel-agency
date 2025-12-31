@@ -5,9 +5,9 @@ import { Award, Clock, Heart, Shield, Users, Headphones, MoonStar } from "lucide
 import { cn } from "@/lib/utils"
 
 const stats = [
-  { icon: Award, value: "15+", label: "Years Experience" },
-  { icon: Users, value: "50K+", label: "Happy Customers" },
-  { icon: Shield, value: "99%", label: "Visa Success Rate" },
+  { icon: Award, value: "7+", label: "Years Experience" },
+  { icon: Users, value: "7K+", label: "Happy Customers" },
+  { icon: Shield, value: "98%", label: "Visa Success Rate" },
   { icon: Headphones, value: "24/7", label: "Customer Support" },
 ]
 
