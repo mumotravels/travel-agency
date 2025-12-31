@@ -41,6 +41,7 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <AnimatedSection direction="up">
             <Link
+              prefetch={false}
               href="/blog"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-6 lg:mb-8"
             >
@@ -170,7 +171,7 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {relatedPosts.map((relatedPost, index) => (
               <AnimatedSection key={relatedPost.slug} direction="up" delay={index * 100}>
-                <Link href={`/blog/${relatedPost.slug}`}>
+                <Link prefetch={false} href={`/blog/${relatedPost.slug}`}>
                   <Card className="group overflow-hidden border-border hover:border-primary/30 shadow-none hover:shadow-xl transition-all duration-500 h-full bg-card">
                     <div className="relative aspect-16/10 overflow-hidden">
                       <img

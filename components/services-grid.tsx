@@ -55,7 +55,7 @@ export function ServicesGrid() {
                   </ul>
 
                   <Button variant="ghost" className="p-0 h-auto font-semibold text-primary group/btn" asChild>
-                    <Link href={`/services/${service.slug}`}>
+                    <Link prefetch={false} href={`/services/${service.slug}`}>
                       View {service.packages.length} Packages
                       <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                     </Link>

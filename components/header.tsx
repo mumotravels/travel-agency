@@ -42,7 +42,7 @@ export function Header() {
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-20 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 md:gap-3 group">
+        <Link prefetch={false} href="/" className="flex items-center gap-2 md:gap-3 group">
           <div
             className={cn(
               "relative w-10 h-10 md:w-12 md:h-12 rounded-lg transition-all duration-500 overflow-hidden shrink-0",
@@ -50,7 +50,7 @@ export function Header() {
             )}
           >
             <Image
-              src="/logo.jpg"
+              src="/icon.png"
               alt="Mumo Travels & Tours Logo"
               fill
               className="object-contain p-1.5"
@@ -82,6 +82,7 @@ export function Header() {
         <nav className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
             <Link
+              prefetch={false}
               key={link.href}
               href={link.href}
               className={cn(
@@ -115,8 +116,10 @@ export function Header() {
             )}
             asChild
           >
-            <Link href="/contact">
-              <span className="relative z-10">Book Now</span>
+            <Link
+              prefetch={false}
+              href="/contact">
+              <span className="relative z-10">Contact Us</span>
               <div className="absolute inset-0 bg-linear-to-r from-transparent via-card/20 to-transparent -translate-x-full hover:translate-x-full transition-transform duration-700" />
             </Link>
           </Button>
@@ -155,6 +158,7 @@ export function Header() {
               <nav className="flex flex-col gap-0.5 md:gap-1">
                 {navLinks.map((link, index) => (
                   <Link
+                    prefetch={false}
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
@@ -176,7 +180,7 @@ export function Header() {
                   className="w-full bg-linear-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground rounded-lg md:rounded-xl h-11 md:h-12 font-semibold shadow-lg shadow-primary/20"
                   asChild
                 >
-                  <Link href="/contact" onClick={() => setIsOpen(false)}>
+                  <Link prefetch={false} href="/contact" onClick={() => setIsOpen(false)}>
                     Book Now
                   </Link>
                 </Button>

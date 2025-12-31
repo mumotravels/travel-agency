@@ -4,8 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { AnimatedSection } from "@/components/ui/animated-section"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Clock, CheckCircle2, MessageCircle } from "lucide-react"
+import { Clock, CheckCircle2, MessageCircle, Phone } from "lucide-react"
 import { servicesData } from "@/lib/services-data"
 
 interface ServicePackagesGridProps {
@@ -35,9 +34,6 @@ export function ServicePackagesGrid({ activeService }: ServicePackagesGridProps)
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
-                  <Badge className="absolute top-3 right-3 bg-primary text-primary-foreground">
-                    {pkg.currency} {pkg.price.toLocaleString()}
-                  </Badge>
                   <div className="absolute bottom-3 left-3 flex items-center gap-2 text-white text-sm">
                     <Clock className="h-4 w-4" />
                     {pkg.duration}
@@ -62,9 +58,12 @@ export function ServicePackagesGrid({ activeService }: ServicePackagesGridProps)
                   </ul>
 
                   {/* Actions */}
-                  <div className="flex gap-2">
-                    <Button asChild className="flex-1" size="sm">
-                      <Link href={`/contact`}>View Details</Link>
+                  <div className="flex justify-between gap-2">
+                    <Button size="sm" variant="outline" asChild>
+                      <Link prefetch={false} href="tel:+8801894844452">
+                        <Phone className="mr-2 h-5 w-5" />
+                        Call for Price
+                      </Link>
                     </Button>
                     <Button variant="outline" size="sm" className="shrink-0 bg-transparent" asChild>
                       <a

@@ -30,7 +30,7 @@ const reasons = [
 const highlights = [
   "Govt Licenses Approved",
   "Ministry of Civil Aviation and Tourism Approved",
-  "Secure Online Booking",
+  "Return policy refunds",
   "No Hidden Charges",
   "Flexible Payment Options",
   "Travel Insurance Available",

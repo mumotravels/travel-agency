@@ -27,7 +27,7 @@ export function ServicesCTA() {
           <AnimatedSection direction="up" delay={200}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" className="bg-white text-foreground hover:bg-white/90 rounded-full px-8 group" asChild>
-                <Link href="/contact">
+                <Link prefetch={false} href="/contact">
                   Get a Free Consultation
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -37,13 +37,13 @@ export function ServicesCTA() {
                 variant="outline"
                 className="border-white/30 text-white bg-white/10 hover:bg-white/20 rounded-full px-8"
               >
-                <Link href="tel:+8801332846700" className="text-lg font-semibold flex items-center">
+                <Link prefetch={false} href="tel:+8801332846700" className="text-lg font-semibold flex items-center">
                   <Phone className="mr-2 h-4 w-4" />
                   Call Now
                 </Link>
               </Button>
               <Button size="lg" className="bg-[#25D366] hover:bg-[#20BD5A] text-white rounded-full px-8" asChild>
-                <Link
+                <Link prefetch={false}
                   href="https://wa.me/8801332846700"
                   className="text-lg font-semibold"
                 >

@@ -116,7 +116,7 @@ export function AboutContent() {
 
             <AnimatedSection direction="right" delay={400}>
               <Button size="lg" className="rounded-full px-8 group" asChild>
-                <Link href="/contact">
+                <Link prefetch={false} href="/contact">
                   Start Your Journey
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>

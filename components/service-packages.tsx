@@ -54,18 +54,18 @@ function PackageCard({ pkg, index, serviceColor }: { pkg: Package; index: number
                     <div className="flex items-end justify-between pt-4 border-t border-border">
                         <div className="flex gap-2">
                             <Button size="sm" variant="outline" asChild>
-                                <Link href="tel:+8801894844452">
+                                <Link prefetch={false} href="tel:+8801894844452">
                                     <Phone className="mr-2 h-5 w-5" />
                                     Call for Price
                                 </Link>
                             </Button>
                             <Button size="sm" variant="outline" asChild>
-                                <Link href={`https://wa.me/8801894844452?text=I'm interested in ${pkg.name} package`} target="_blank">
+                                <Link prefetch={false} href={`https://wa.me/8801894844452?text=I'm interested in ${pkg.name} package`} target="_blank">
                                     <MessageCircle className="h-4 w-4" />
                                 </Link>
                             </Button>
                             <Button size="sm" asChild>
-                                <Link href="/contact">
+                                <Link prefetch={false} href="/contact">
                                     Book Now
                                     <ArrowRight className="ml-1 h-4 w-4" />
                                 </Link>
@@ -124,13 +124,13 @@ export function ServicePackages({ service }: ServicePackagesProps) {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Button size="lg" asChild>
-                                <Link href="/contact">
+                                <Link prefetch={false} href="/contact">
                                     <MessageCircle className="mr-2 h-5 w-5" />
                                     Contact Us
                                 </Link>
                             </Button>
                             <Button size="lg" variant="outline" asChild>
-                                <Link href="tel:+8801894844452">
+                                <Link prefetch={false} href="tel:+8801894844452">
                                     <Phone className="mr-2 h-5 w-5" />
                                     Call Now
                                 </Link>

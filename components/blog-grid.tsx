@@ -24,7 +24,7 @@ export function BlogGrid() {
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           {/* Featured Post */}
           <AnimatedSection direction="up" className="mb-12 lg:mb-16">
-            <Link href={`/blog/${featuredPost.slug}`}>
+            <Link prefetch={false} href={`/blog/${featuredPost.slug}`}>
               <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center bg-card rounded-2xl lg:rounded-3xl overflow-hidden border border-border hover:border-primary/30 hover:shadow-2xl transition-all duration-500 group">
                 <div className="relative aspect-16/10 lg:aspect-auto lg:h-full overflow-hidden">
                   <img
@@ -69,7 +69,7 @@ export function BlogGrid() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {otherPosts.map((post, index) => (
               <AnimatedSection key={post.slug} direction="up" delay={index * 100}>
-                <Link href={`/blog/${post.slug}`}>
+                <Link prefetch={false} href={`/blog/${post.slug}`}>
                   <Card className="group overflow-hidden border-border hover:border-primary/30 shadow-none hover:shadow-xl transition-all duration-500 h-full bg-card">
                     <div className="relative aspect-16/10 overflow-hidden">
                       <img

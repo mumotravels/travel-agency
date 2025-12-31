@@ -38,7 +38,7 @@ export function BlogSection() {
         {/* Blog Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {displayPosts.map((post, index) => (
-            <Link href={`/blog/${post.slug}`} key={post.slug}>
+            <Link prefetch={false} href={`/blog/${post.slug}`} key={post.slug}>
               <Card
                 className={cn(
                   "group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-card cursor-pointer h-full",

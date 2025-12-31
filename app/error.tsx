@@ -57,7 +57,7 @@ export default function Error({
                             Try Again
                         </Button>
                         <Button asChild variant="outline" size="lg" className="gap-2 bg-transparent">
-                            <Link href="/">
+                            <Link prefetch={false} href="/">
                                 <Home className="w-4 h-4" />
                                 Go Home
                             </Link>
@@ -67,6 +67,7 @@ export default function Error({
                     {/* Help link */}
                     <div className="mt-8 md:mt-10">
                         <Link
+                            prefetch={false}
                             href="/contact"
                             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                         >

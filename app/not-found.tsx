@@ -58,13 +58,13 @@ export default function NotFound() {
                     {/* Action buttons */}
                     <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full sm:w-auto">
                         <Button asChild size="lg" className="gap-2">
-                            <Link href="/">
+                            <Link prefetch={false} href="/">
                                 <Home className="w-4 h-4" />
                                 Back to Home
                             </Link>
                         </Button>
                         <Button asChild variant="outline" size="lg" className="gap-2 bg-transparent">
-                            <Link href="/contact">
+                            <Link prefetch={false} href="/contact">
                                 <ArrowLeft className="w-4 h-4" />
                                 Contact Us
                             </Link>

@@ -77,7 +77,7 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Brand */}
           <div>
-            <Link href="/" className="inline-flex items-center gap-2 md:gap-3 mb-4 md:mb-6 group">
+            <Link prefetch={false} href="/" className="inline-flex items-center gap-2 md:gap-3 mb-4 md:mb-6 group">
               <div className=" rounded-lg md:rounded-xl bg-linear-to-br from-primary to-primary/80 shadow-lg shadow-primary/25 group-hover:shadow-xl group-hover:shadow-primary/30 transition-all">
                 <Image src="/icon.png" alt="Mumo Travels & Tours Logo" width={50} height={50} className="" priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
               </div>
@@ -92,7 +92,7 @@ export function Footer() {
             </Link>
             <p className="text-white/60 leading-relaxed text-sm md:text-base mb-4 md:mb-6">
               Your trusted partner for visa processing, tour packages, and unforgettable travel experiences worldwide.
-              Making travel dreams come true since 2009.
+              Making travel dreams come true since 2018.
             </p>
             <div className="flex gap-2 md:gap-3">
               {[
@@ -122,6 +122,7 @@ export function Footer() {
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
+                    prefetch={false}
                     href={link.href}
                     className="text-white/60 hover:text-primary hover:translate-x-2 transition-all inline-flex items-center gap-2 group text-sm md:text-base"
                   >
@@ -143,6 +144,7 @@ export function Footer() {
               {servicesData.slice(0, 5).map((service, index) => (
                 <li key={index}>
                   <Link
+                    prefetch={false}
                     href={`/services/${service.slug}`}
                     className="text-white/60 hover:text-primary hover:translate-x-2 transition-all inline-flex items-center gap-2 group text-sm md:text-base"
                   >
@@ -166,9 +168,7 @@ export function Footer() {
                   <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4" />
                 </div>
                 <span className="text-white/60 leading-relaxed text-sm md:text-base">
-                  House - 25, Road-13,Sector-6, Uttara Model Town,
-                  <br />
-                  Dhaka-1230 Bangladesh.
+                  House - 53, Road-13,Sector-04, Uttara , Dhaka Bangladesh. 1230 Dhaka, Bangladesh
                 </span>
               </li>
               <li>
@@ -214,6 +214,7 @@ export function Footer() {
             <div className="flex flex-wrap justify-center gap-4 md:gap-6">
               {legal.map((link) => (
                 <Link
+                  prefetch={false}
                   key={link.label}
                   href={link.href}
                   className="text-xs md:text-sm text-white/40 hover:text-primary transition-colors"

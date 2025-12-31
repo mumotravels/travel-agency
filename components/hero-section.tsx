@@ -153,7 +153,7 @@ export function HeroSection() {
                 )}
                 asChild
               >
-                <Link href="/services">
+                <Link prefetch={false} href="/services">
                   <span className="relative z-10">View Packages</span>
                   <div className="absolute inset-0 bg-linear-to-r from-transparent via-card/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 </Link>
@@ -171,7 +171,7 @@ export function HeroSection() {
                 )}
                 asChild
               >
-                <Link href="/contact">Book Now</Link>
+                <Link prefetch={false} href="/contact">Contact Us</Link>
               </Button>
             </div>
           </div>
