@@ -43,8 +43,8 @@ export function Footer() {
   return (
     <footer className="bg-linear-to-b from-[oklch(0.18_0.04_250)] to-[oklch(0.14_0.04_250)] text-white relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[200px]" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-sky/5 rounded-full blur-[150px]" />
+      <div className="absolute top-0 right-0 w-150 h-150 bg-primary/5 rounded-full blur-[200px]" />
+      <div className="absolute bottom-0 left-0 w-400 h-400 bg-sky/5 rounded-full blur-[150px]" />
 
       {/* Newsletter Section */}
       <div className="border-b border-white/10 relative">
@@ -52,7 +52,7 @@ export function Footer() {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-5 md:gap-8">
             <div className="text-center lg:text-left">
               <h3 className="text-xl md:text-3xl font-bold mb-2 md:mb-3">
-                Subscribe to Our <span className="text-primary">Newsletter</span>
+                Stay Updated with Our <span className="text-primary">Travel Offers</span>
               </h3>
               <p className="text-white/60 text-sm md:text-base">
                 Get exclusive travel deals and updates straight to your inbox

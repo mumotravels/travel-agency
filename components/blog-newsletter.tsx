@@ -19,7 +19,7 @@ export function BlogNewsletter() {
               <div className="inline-flex p-4 rounded-2xl bg-primary/10 mb-6">
                 <Mail className="h-8 w-8 text-primary" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Subscribe to Our Newsletter</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Stay Updated with Our Travel Offers</h2>
               <p className="text-muted-foreground text-lg mb-8 max-w-lg mx-auto">
                 Get the latest travel tips, destination guides, and exclusive deals delivered straight to your inbox.
               </p>
