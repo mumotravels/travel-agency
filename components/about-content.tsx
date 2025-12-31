@@ -3,6 +3,7 @@
 import { AnimatedSection } from "@/components/ui/animated-section"
 import { Button } from "@/components/ui/button"
 import { Target, Eye, Heart, Globe, Shield, Sparkles, ArrowRight, CheckCircle2 } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 
 const values = [
@@ -57,7 +58,7 @@ export function AboutContent() {
                 </div>
                 <div className="aspect-square rounded-2xl overflow-hidden shadow-xl bg-primary flex items-center justify-center">
                   <div className="text-center text-primary-foreground p-6">
-                    <div className="text-5xl font-bold mb-2">15+</div>
+                    <div className="text-5xl font-bold mb-2">7+</div>
                     <div className="text-sm opacity-90">Years of Excellence</div>
                   </div>
                 </div>
@@ -71,7 +72,9 @@ export function AboutContent() {
                   />
                 </div>
                 <div className="aspect-4/5 rounded-2xl overflow-hidden shadow-2xl">
-                  <img
+                  <Image
+                    width={500}
+                    height={500}
                     src="/beautiful-travel-destination-scenic-view.jpg"
                     alt="Destination"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
@@ -92,7 +95,7 @@ export function AboutContent() {
 
             <AnimatedSection direction="right" delay={200}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Founded in 2009, Mumo Travels & Tours began with a simple vision: to make world-class travel accessible to
+                Founded in 2018, Mumo Travels & Tours began with a simple vision: to make world-class travel accessible to
                 everyone. What started as a small consultancy has grown into a trusted name in the travel industry,
                 serving over 50,000 happy travelers worldwide.
               </p>

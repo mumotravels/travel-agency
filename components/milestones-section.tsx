@@ -1,46 +1,25 @@
 "use client"
 
 import { AnimatedSection } from "@/components/ui/animated-section"
-import { Award, Globe, Users, Star } from "lucide-react"
 
 const milestones = [
   {
-    year: "2009",
+    year: "2018",
     title: "Company Founded",
     description: "Started our journey with a vision to make travel accessible",
   },
-  { year: "2012", title: "10,000 Customers", description: "Reached our first major milestone of happy travelers" },
-  { year: "2015", title: "Global Expansion", description: "Extended services to 50+ countries worldwide" },
-  { year: "2018", title: "Industry Award", description: "Recognized as Best Travel Consultancy of the Year" },
-  { year: "2021", title: "Digital Innovation", description: "Launched our state-of-the-art booking platform" },
-  { year: "2024", title: "50,000+ Travelers", description: "Celebrating 50,000 successful journeys worldwide" },
+  { year: "2019", title: "10,000 Customers", description: "Reached our first major milestone of happy travelers" },
+  { year: "2022", title: "Global Expansion", description: "Extended services to 50+ countries worldwide" },
+  { year: "2023", title: "Industry Award", description: "Recognized as Best Travel Consultancy of the Year" },
+  { year: "2024", title: "Digital Innovation", description: "Launched our state-of-the-art booking platform" },
+  { year: "2025", title: "50,000+ Travelers", description: "Celebrating 50,000 successful journeys worldwide" },
 ]
 
-const stats = [
-  { icon: Globe, value: "100+", label: "Destinations" },
-  { icon: Users, value: "50K+", label: "Happy Travelers" },
-  { icon: Award, value: "25+", label: "Industry Awards" },
-  { icon: Star, value: "4.9", label: "Customer Rating" },
-]
 
 export function MilestonesSection() {
   return (
     <section className="md:py-10 py-4 bg-linear-to-b from-background to-secondary/30">
       <div className="container mx-auto md:px-4 px-1">
-        {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
-          {stats.map((stat, index) => (
-            <AnimatedSection key={index} direction="up" delay={index * 100}>
-              <div className="text-center p-8 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-500 group">
-                <div className="inline-flex p-4 rounded-xl bg-primary/10 mb-4 group-hover:bg-primary group-hover:scale-110 transition-all">
-                  <stat.icon className="h-7 w-7 text-primary group-hover:text-primary-foreground transition-colors" />
-                </div>
-                <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">{stat.value}</div>
-                <div className="text-muted-foreground">{stat.label}</div>
-              </div>
-            </AnimatedSection>
-          ))}
-        </div>
 
         {/* Timeline */}
         <div className="text-center mb-16">

@@ -15,7 +15,7 @@ export default function AboutPage() {
     <main className="min-h-screen">
       <PageHeader
         title="About Mumo Travels & Tours "
-        subtitle="Your trusted partner in creating unforgettable travel experiences since 2009"
+        subtitle="Your trusted partner in creating unforgettable travel experiences since 2018"
         breadcrumb="About Us"
       />
       <div className="md:px-20 px-4">
