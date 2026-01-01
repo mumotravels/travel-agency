@@ -58,7 +58,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative h-[65vh] md:h-[75vh] lg:h-[85vh] overflow-hidden mt-16 md:mt-20 bg-foreground/5"
+      className="relative h-[65vh] md:h-[75vh] lg:h-[85vh] overflow-hidden mt-8 md:mt-16 bg-foreground/5"
     >
       {/* Background Slides with optimized images */}
       {slides.map((slide, index) => (

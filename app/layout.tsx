@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     // yandex: "your-yandex-verification-code",
   },
   category: "travel",
-    generator: 'v0.app'
+  generator: 'v0.app'
 }
 
 export const viewport: Viewport = {
@@ -113,7 +113,7 @@ export default function RootLayout({
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '748336294208189');
-            fbq('track', 'PageView');
+            fbq('track', 'HomePageView');
           `}
         </Script>
         <noscript>
