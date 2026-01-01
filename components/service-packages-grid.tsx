@@ -65,14 +65,14 @@ export function ServicePackagesGrid({ activeService }: ServicePackagesGridProps)
                         Call for Price
                       </Link>
                     </Button>
-                    <Button variant="outline" size="sm" className="shrink-0 bg-transparent" asChild>
-                      <a
-                        href={`https://wa.me/8801332-846700?text=Hi, I'm interested in ${pkg.name} (${pkg.duration}) - ${pkg.currency} ${pkg.price.toLocaleString()}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <Button variant="outline" size="sm" className="shrink-0 bg-transparent hover:bg-[#20BD5A]" asChild>
+                      <Link prefetch={false}
+                        href="https://wa.me/8801332846700"
+                        className="text-lg font-semibold"
                       >
-                        <MessageCircle className="h-4 w-4" />
-                      </a>
+                        <MessageCircle className="mr-2 h-4 w-4" />
+                        WhatsApp
+                      </Link>
                     </Button>
                   </div>
                 </div>
