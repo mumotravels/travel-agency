@@ -7,9 +7,6 @@ import { useIsMobile } from "@/components/ui/use-mobile"
 export default function ContactPage() {
   const isMobile = useIsMobile()
 
-  // Page tracking is now handled automatically by MetaPixelInitializer component
-  // No need for inline scripts here
-
   return (
     <main className="min-h-screen">
       {isMobile ? null : (

@@ -79,7 +79,7 @@ export function ContactForm() {
 
   if (isSuccess) {
     return (
-      <section className="md:py-20 py-10 bg-muted/30">
+      <section className="md:py-20 mt-10 py-10 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="bg-card rounded-2xl shadow-lg p-8 md:p-12 text-center">
@@ -123,14 +123,14 @@ export function ContactForm() {
 
               <div className="space-y-1">
                 <Label className="text-xs md:text-sm" htmlFor="email">
-                  Email Address *
+                  Email Address
                 </Label>
                 <Input
                   id="email"
                   name="email"
                   type="email"
                   placeholder="john@example.com"
-                  required
+
                   className="h-9 md:h-12 text-sm md:text-base"
                 />
               </div>
@@ -142,6 +142,7 @@ export function ContactForm() {
                 <Input
                   id="phone"
                   name="phone"
+                  required
                   type="tel"
                   placeholder="+88017 0000-0000"
                   className="h-9 md:h-12 text-sm md:text-base"
