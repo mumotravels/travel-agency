@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { TestimonialIProps } from "@/lib/data-fetch"
 
 const testimonials = [
   {
@@ -55,7 +56,7 @@ const testimonials = [
   },
 ]
 
-export function TestimonialsSection() {
+export function TestimonialsSection({ testimonials }: { testimonials: TestimonialIProps[] }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [itemsPerView, setItemsPerView] = useState(1)
   const { ref, inView } = useInView({
@@ -140,17 +141,17 @@ export function TestimonialsSection() {
                         ))}
                       </div>
                       <p className="text-muted-foreground leading-relaxed mb-4 md:mb-6 text-xs md:text-base">
-                        "{testimonial.review}"
+                        "{testimonial.content}"
                       </p>
                       <div className="flex items-center gap-2.5 md:gap-4 pt-3 md:pt-4 border-t border-border">
                         <Avatar className="h-9 w-9 md:h-12 md:w-12">
-                          <AvatarImage src={testimonial.avatar || "/placeholder.svg"} alt={testimonial.name} />
+                          <AvatarImage src={"/placeholder.svg"} alt={testimonial.name} />
                           <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
                         </Avatar>
                         <div>
                           <div className="font-semibold text-foreground text-xs md:text-base">{testimonial.name}</div>
                           <div className="text-[10px] md:text-sm text-muted-foreground">
-                            Traveled to {testimonial.destination}
+                            {testimonial.title}
                           </div>
                         </div>
                       </div>

@@ -25,7 +25,42 @@ export interface ServicesIProps {
     packages?: PackageIProps[]
 }
 
+export interface TestimonialIProps {
+    id: number
+    name: string
+    title: string
+    content: string
+    rating: number
+}
+
+
+
 const API_URL = process.env.NEXT_PRIVATE_API_URL;
+
+
+
+
+
+
+export async function getTestimonialsData(): Promise<TestimonialIProps[]> {
+    try {
+        const res = await fetch(`${API_URL}/api/admin/testimonials`, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+        if (!res.ok) {
+            throw new Error("Failed to fetch testimonials");
+        }
+        const data = await res.json();
+        return data.data;
+    } catch (error) {
+        console.error("Error fetching testimonials:", error);
+        return [];
+    }
+}
+
+
 
 export async function getServicesWithPackages(): Promise<ServicesIProps[]> {
     try {
