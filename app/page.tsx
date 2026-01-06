@@ -6,12 +6,13 @@ import { BlogSection } from "@/components/blog-section"
 import { FAQSection } from "@/components/faq-section"
 import { ServicesWithFilter } from "@/components/services-with-filter"
 import { ServicesSection } from "@/components/services-section"
-import { getServicesWithPackages, getSlidersData, getTestimonialsData } from "@/lib/data-fetch"
+import { getBlogPostsData, getServicesWithPackages, getSlidersData, getTestimonialsData } from "@/lib/data-fetch"
 
 export default async function Home() {
   const sliders = await getSlidersData();
   const services = await getServicesWithPackages();
   const testimonials = await getTestimonialsData();
+  const blogPosts = await getBlogPostsData();
   return (
     <>
       <main className="min-h-screen">
@@ -23,7 +24,7 @@ export default async function Home() {
         </div>
         <WhyChooseUsSection />
         <TestimonialsSection testimonials={testimonials} />
-        <BlogSection />
+        <BlogSection blogPosts={blogPosts} />
         <FAQSection />
       </main>
     </>

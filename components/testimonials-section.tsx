@@ -8,53 +8,6 @@ import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { TestimonialIProps } from "@/lib/data-fetch"
 
-const testimonials = [
-  {
-    id: 1,
-    name: "Rahman Hussain",
-    destination: "Dubai, UAE",
-    avatar: "/professional-man-smiling.png",
-    rating: 5,
-    review:
-      "Thanks to Momu Travels & Tours, my Dubai trip was absolutely seamless! The team handled everything from visa to hotel bookings. Highly recommend their services!",
-  },
-  {
-    id: 2,
-    name: "Sarah Johnson",
-    destination: "Maldives",
-    avatar: "/professional-woman-smiling-portrait.png",
-    rating: 5,
-    review:
-      "Our honeymoon in Maldives was a dream come true. Every detail was perfectly arranged. The resort they recommended was beyond our expectations!",
-  },
-  {
-    id: 3,
-    name: "Ahmed Khan",
-    destination: "Europe Tour",
-    avatar: "/young-professional-man-portrait.png",
-    rating: 5,
-    review:
-      "The Europe tour package was exceptional. Visited 5 countries in 10 days with zero hassles. Their local guides were knowledgeable and friendly.",
-  },
-  {
-    id: 4,
-    name: "Fatima Ali",
-    destination: "Turkey",
-    avatar: "/professional-woman-hijab-portrait-smiling.jpg",
-    rating: 5,
-    review:
-      "Got my Schengen visa approved in just 5 days! The team's expertise in visa processing is remarkable. Will definitely use their services again.",
-  },
-  {
-    id: 5,
-    name: "Michael Chen",
-    destination: "Singapore",
-    avatar: "/asian-professional-man-portrait.jpg",
-    rating: 5,
-    review:
-      "Family trip to Singapore was perfectly organized. The kids loved every moment. Great value for money and excellent customer service!",
-  },
-]
 
 export function TestimonialsSection({ testimonials }: { testimonials: TestimonialIProps[] }) {
   const [currentIndex, setCurrentIndex] = useState(0)

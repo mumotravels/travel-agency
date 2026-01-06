@@ -6,9 +6,9 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, ArrowRight, Clock } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { blogPosts } from "@/lib/blog-data"
+import { BlogPostIProps } from "@/lib/data-fetch"
 
-export function BlogSection() {
+export function BlogSection({ blogPosts }: { blogPosts: BlogPostIProps[] }) {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -59,11 +59,19 @@ export function BlogSection() {
                   <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
                     <div className="flex items-center gap-1">
                       <Calendar className="h-4 w-4" />
-                      <span>{post.date}</span>
+                      <span>
+                        {
+                          new Date(post.createdAt).toLocaleDateString("en-US", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          })
+                        }
+                      </span>
                     </div>
                     <div className="flex items-center gap-1">
                       <Clock className="h-4 w-4" />
-                      <span>{post.readTime}</span>
+                      <span>5 min</span>
                     </div>
                   </div>
                   <h3 className="text-lg lg:text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">

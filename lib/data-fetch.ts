@@ -33,9 +33,42 @@ export interface TestimonialIProps {
     rating: number
 }
 
+export interface BlogPostIProps {
+    id: number
+    title: string
+    slug: string
+    category: string
+    excerpt: string
+    content: string
+    image: string
+    featured: boolean
+    createdAt: string
+}
+
 
 
 const API_URL = process.env.NEXT_PRIVATE_API_URL;
+
+export async function getBlogPostsData(): Promise<BlogPostIProps[]> {
+    try {
+        const res = await fetch(`${API_URL}/api/admin/blog`, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            next: { revalidate: 60 }
+        });
+        if (!res.ok) {
+            throw new Error("Failed to fetch blog posts");
+        }
+        const data = await res.json();
+        return data.data;
+    } catch (error) {
+        console.error("Error fetching blog posts:", error);
+        return [];
+    }
+}
+
+
 
 
 
@@ -48,6 +81,8 @@ export async function getTestimonialsData(): Promise<TestimonialIProps[]> {
             headers: {
                 'Content-Type': 'application/json',
             },
+            next: { revalidate: 60 }
+            // Revalidate every 60 seconds
         });
         if (!res.ok) {
             throw new Error("Failed to fetch testimonials");
