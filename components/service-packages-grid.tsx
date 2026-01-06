@@ -4,16 +4,16 @@ import Image from "next/image"
 import Link from "next/link"
 import { AnimatedSection } from "@/components/ui/animated-section"
 import { Button } from "@/components/ui/button"
-import { Clock, CheckCircle2, MessageCircle, Phone } from "lucide-react"
-import { servicesData } from "@/lib/services-data"
+import { CheckCircle2, MessageCircle, Phone } from "lucide-react"
+import { PackageIProps, ServicesIProps } from "@/lib/data-fetch"
 
 interface ServicePackagesGridProps {
   activeService: string
+  services: ServicesIProps[]
 }
 
-export function ServicePackagesGrid({ activeService }: ServicePackagesGridProps) {
-  const service = servicesData.find((s) => s.slug === activeService)
-
+export function ServicePackagesGrid({ activeService, services }: ServicePackagesGridProps) {
+  const service = services.find((s) => s.url === activeService)
   if (!service) return null
 
   return (
@@ -21,7 +21,7 @@ export function ServicePackagesGrid({ activeService }: ServicePackagesGridProps)
       <div className="container mx-auto px-4">
         {/* Packages Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {service.packages.map((pkg, index) => (
+          {service?.packages?.map((pkg: PackageIProps, index) => (
             <AnimatedSection key={pkg.id} direction="up" delay={index * 50}>
               <div className="group h-full bg-card rounded-2xl border border-border overflow-hidden hover:shadow-xl hover:border-primary/20 transition-all duration-300">
                 {/* Package Image */}
@@ -29,15 +29,12 @@ export function ServicePackagesGrid({ activeService }: ServicePackagesGridProps)
                   <Image
                     src={pkg.image || "/placeholder.svg"}
                     alt={pkg.name}
+                    priority
                     fill={true}
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-3 left-3 flex items-center gap-2 text-white text-sm">
-                    <Clock className="h-4 w-4" />
-                    {pkg.duration}
-                  </div>
                 </div>
 
                 {/* Package Content */}
@@ -49,7 +46,7 @@ export function ServicePackagesGrid({ activeService }: ServicePackagesGridProps)
 
                   {/* Highlights */}
                   <ul className="space-y-1.5 mb-5">
-                    {pkg.highlights.slice(0, 4).map((highlight, idx) => (
+                    {pkg.bulletPoints.map((highlight, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-xs text-muted-foreground">
                         <CheckCircle2 className="h-3.5 w-3.5 text-primary shrink-0" />
                         {highlight}
