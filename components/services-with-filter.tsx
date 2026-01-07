@@ -7,7 +7,6 @@ import { ServicesIProps } from "@/lib/data-fetch"
 
 export function ServicesWithFilter({ services }: { services: ServicesIProps[] }) {
 
-  console.log(services, "services with filter");
   const [activeService, setActiveService] = useState(services[0].url)
 
   return (

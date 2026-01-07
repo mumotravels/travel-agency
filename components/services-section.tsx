@@ -35,7 +35,7 @@ export function ServicesSection({ services }: { services: ServicesIProps[] }) {
                   <div
                     className={`inline-flex p-4 rounded-2xl bg-linear-to-br mb-6 group-hover:scale-110 transition-transform duration-300`}
                   >
-                    <div className="h-7 w-7 text-white"> {service.icon}</div>
+                    <div className="text-4xl shrink-0 p-4 bg-primary/10 rounded-lg h-fit">{service.icon}</div>
                   </div>
 
                   <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
