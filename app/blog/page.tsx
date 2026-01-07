@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { PageHeader } from "@/components/page-header"
 import { BlogGrid } from "@/components/blog-grid"
+import { getBlogCategories, getBlogPostsData } from "@/lib/data-fetch"
 
 export const metadata: Metadata = {
   title: "Travel Blog | Mumo Travels - Travel Tips & Inspiration",
@@ -8,7 +9,9 @@ export const metadata: Metadata = {
     "Discover travel tips, destination guides, visa information, and inspiring stories from around the world.",
 }
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const blogs = await getBlogPostsData();
+  const categories = await getBlogCategories();
   return (
     <main className="min-h-screen">
       <PageHeader
@@ -17,7 +20,7 @@ export default function BlogPage() {
         breadcrumb="Blog"
       />
       <div className="md:mx-10 mx-1">
-        <BlogGrid />
+        <BlogGrid blogs={blogs} categories={categories} />
       </div>
     </main>
   )

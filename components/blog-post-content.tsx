@@ -6,15 +6,16 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { AnimatedSection } from "@/components/ui/animated-section"
 import { Calendar, Clock, ArrowLeft, Facebook, Twitter, Linkedin, Link2 } from "lucide-react"
-import { type BlogPost, getRelatedPosts, getBlogCategories } from "@/lib/blog-data"
+import { BlogPostIProps } from "@/lib/data-fetch"
 
 interface BlogPostContentProps {
-  post: BlogPost
+  post: BlogPostIProps
+  relatedPosts: BlogPostIProps[]
+  categories: { id: string; name: string; count: number }[]
 }
 
-export function BlogPostContent({ post }: BlogPostContentProps) {
-  const relatedPosts = getRelatedPosts(post.slug, post.category)
-  const categories = getBlogCategories().filter((c) => c.id !== "all")
+export function BlogPostContent({ post, relatedPosts, categories }: BlogPostContentProps) {
+
 
   const handleShare = (platform: string) => {
     const url = typeof window !== "undefined" ? window.location.href : ""
@@ -60,11 +61,17 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
             <div className="flex flex-wrap items-center gap-4 lg:gap-6 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" />
-                <span>{post.date}</span>
+                <span>{
+                  new Date(post.createdAt).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })
+                }</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4" />
-                <span>{post.readTime}</span>
+                <span>5 min read</span>
               </div>
             </div>
           </AnimatedSection>
@@ -187,11 +194,17 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
                       <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
                         <div className="flex items-center gap-1">
                           <Calendar className="h-3 w-3" />
-                          <span>{relatedPost.date}</span>
+                          <span>{
+                            new Date(post.createdAt).toLocaleDateString("en-US", {
+                              year: "numeric",
+                              month: "long",
+                              day: "numeric",
+                            })
+                          }</span>
                         </div>
                         <div className="flex items-center gap-1">
                           <Clock className="h-3 w-3" />
-                          <span>{relatedPost.readTime}</span>
+                          <span> 5 min </span>
                         </div>
                       </div>
                       <h3 className="text-base lg:text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">

@@ -1,15 +1,16 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { BlogPostContent } from "@/components/blog-post-content"
-import { blogPosts, getBlogPostBySlug } from "@/lib/blog-data"
+import { getBlogCategories, getBlogPostBySlug, getBlogPostsData, getRelatedPosts } from "@/lib/data-fetch"
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>
 }
 
+
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params
-  const post = getBlogPostBySlug(slug)
+  const post = await getBlogPostBySlug(slug)
 
   if (!post) {
     return {
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 }
 
 export async function generateStaticParams() {
+  const blogPosts = await getBlogPostsData()
   return blogPosts.map((post) => ({
     slug: post.slug,
   }))
@@ -31,15 +33,19 @@ export async function generateStaticParams() {
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params
-  const post = getBlogPostBySlug(slug)
+  const post = await getBlogPostBySlug(slug);
+
 
   if (!post) {
     notFound()
   }
 
+  const relatedPosts = await getRelatedPosts(post.slug, post.category)
+  const categories = (await getBlogCategories()).filter((c) => c.id !== "all")
+
   return (
     <main className="min-h-screen px-4 md:px-20">
-      <BlogPostContent post={post} />
+      <BlogPostContent relatedPosts={relatedPosts} categories={categories} post={post} />
     </main>
   )
 }

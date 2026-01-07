@@ -1,16 +1,15 @@
 "use client"
 
 import { AnimatedSection } from "@/components/ui/animated-section"
-import { getBlogCategories } from "@/lib/blog-data"
 import { cn } from "@/lib/utils"
 
 interface BlogCategoriesProps {
   activeCategory: string
   onCategoryChange: (category: string) => void
+  categories: { id: string; name: string; count: number }[]
 }
 
-export function BlogCategories({ activeCategory, onCategoryChange }: BlogCategoriesProps) {
-  const categories = getBlogCategories()
+export function BlogCategories({ activeCategory, onCategoryChange, categories }: BlogCategoriesProps) {
 
   return (
     <section className="py-8 md:py-12 bg-background border-b border-border">

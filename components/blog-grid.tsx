@@ -7,18 +7,18 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Calendar, Clock, ArrowRight } from "lucide-react"
-import { blogPosts, getFilteredPosts } from "@/lib/blog-data"
 import { BlogCategories } from "@/components/blog-categories"
+import { BlogPostIProps, getFilteredPosts } from "@/lib/data-fetch"
 
-export function BlogGrid() {
+export function BlogGrid({ blogs, categories }: { blogs: BlogPostIProps[]; categories: { id: string; name: string; count: number }[] }) {
   const [activeCategory, setActiveCategory] = useState("all")
 
-  const filteredPosts = getFilteredPosts(activeCategory)
-  const [featuredPost, ...otherPosts] = filteredPosts.length > 0 ? filteredPosts : blogPosts
+  const filteredPosts = getFilteredPosts(activeCategory, blogs)
+  const [featuredPost, ...otherPosts] = filteredPosts.length > 0 ? filteredPosts : blogs
 
   return (
     <>
-      <BlogCategories activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
+      <BlogCategories categories={categories} activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
 
       <section className="py-12 lg:py-20 bg-background">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
@@ -49,11 +49,17 @@ export function BlogGrid() {
                   <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
                     <div className="flex items-center gap-2">
                       <Calendar className="h-4 w-4" />
-                      <span>{featuredPost.date}</span>
+                      <span>{
+                        new Date(featuredPost.createdAt).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })
+                      }</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Clock className="h-4 w-4" />
-                      <span>{featuredPost.readTime}</span>
+                      <span>5 min</span>
                     </div>
                   </div>
                   <Button className="rounded-full px-6 group/btn">
@@ -85,11 +91,17 @@ export function BlogGrid() {
                       <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
                         <div className="flex items-center gap-1">
                           <Calendar className="h-3 w-3" />
-                          <span>{post.date}</span>
+                          <span>{
+                            new Date(post.createdAt).toLocaleDateString("en-US", {
+                              year: "numeric",
+                              month: "long",
+                              day: "numeric",
+                            })
+                          }</span>
                         </div>
                         <div className="flex items-center gap-1">
                           <Clock className="h-3 w-3" />
-                          <span>{post.readTime}</span>
+                          <span>5 min</span>
                         </div>
                       </div>
                       <h3 className="text-base lg:text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">
