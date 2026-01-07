@@ -120,19 +120,21 @@ export function Header({ siteUrl, logo, siteName, description }: { siteUrl: stri
           <SheetContent side="right" className="w-60 bg-card border-l border-border/50">
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
             <div className="flex flex-col h-full py-4 md:py-6">
-              <div className="flex items-center gap-2 md:gap-3 mb-6 md:mb-10">
-                <div className="p-2 md:p-2.5 rounded-lg md:rounded-xl bg-linear-to-br from-primary to-primary/80 shadow-lg shadow-primary/25">
-                  <Plane className="h-5 w-5 md:h-6 md:w-6 text-primary-foreground" />
+              <Link prefetch={false} href="/" className="flex items-center gap-2 md:gap-3 group">
+                <div
+                  className={cn("relative w-auto h-10 md:h-14 lg:h-14 transition-all duration-500 overflow-hidden shrink-0")}
+                >
+                  <Image
+                    src={logo || "/logo.png"}
+                    alt={siteName || "Mumo Travels & Tours"}
+                    className="object-contain h-full w-auto"
+                    height={100}
+                    width={200}
+                    priority
+                    sizes="(max-width: 768px) 160px, (max-width: 1024px) 192px, 224px"
+                  />
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-lg md:text-xl font-bold text-foreground leading-tight">
-                    Mu<span className="text-primary">mo</span>
-                  </span>
-                  <span className="text-[9px] md:text-[10px] uppercase tracking-[0.15em] md:tracking-[0.2em] font-medium text-muted-foreground">
-                    Travels & Tours
-                  </span>
-                </div>
-              </div>
+              </Link>
               <nav className="flex flex-col gap-0.5 md:gap-1">
                 {navLinks.map((link, index) => (
                   <Link

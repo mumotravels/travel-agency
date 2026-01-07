@@ -46,7 +46,7 @@ function PackageCard({ pkg, index }: { pkg: PackageIProps; index: number }) {
 
                     {/* Price & CTA */}
                     <div className="pt-4 border-t border-border">
-                        <div className=" flex items-center justify-between mb-2">
+                        <div className=" flex items-center justify-between mb-2 gap-3">
                             <Button size="sm" variant="outline" asChild>
                                 <Link prefetch={false} href="https://wa.me/8801332846700">
                                     <Phone className=" h-5 w-5" />
