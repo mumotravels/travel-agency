@@ -67,7 +67,7 @@ export async function getFaqsData(): Promise<FaqIProps[]> {
             headers: {
                 'Content-Type': 'application/json',
             },
-            next: { revalidate: 60 }
+            next: { revalidate: 0 }
         });
         if (!res.ok) {
             throw new Error("Failed to fetch FAQs");
@@ -129,7 +129,7 @@ export async function getBlogPostsData(): Promise<BlogPostIProps[]> {
             headers: {
                 'Content-Type': 'application/json',
             },
-            next: { revalidate: 60 }
+            next: { revalidate: 0 }
         });
         if (!res.ok) {
             throw new Error("Failed to fetch blog posts");
@@ -149,7 +149,7 @@ export async function getTestimonialsData(): Promise<TestimonialIProps[]> {
             headers: {
                 'Content-Type': 'application/json',
             },
-            next: { revalidate: 60 }
+            next: { revalidate: 0 }
             // Revalidate every 60 seconds
         });
         if (!res.ok) {
@@ -180,7 +180,7 @@ export async function getServicesWithPackages(): Promise<ServicesIProps[]> {
             headers: {
                 'Content-Type': 'application/json',
             },
-            next: { revalidate: 60 }
+            next: { revalidate: 0 }
         });
         if (!res.ok) {
             throw new Error("Failed to fetch services with packages");
@@ -200,7 +200,7 @@ export async function getSlidersData(): Promise<HeroSliderIProps[]> {
             headers: {
                 'Content-Type': 'application/json',
             },
-            next: { revalidate: 60 }
+            next: { revalidate: 0 }
         });
         if (!res.ok) {
             throw new Error("Failed to fetch sliders");
