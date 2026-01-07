@@ -47,7 +47,7 @@ export function Header({ siteUrl, logo, siteName, description }: { siteUrl: stri
             className={cn("relative w-auto h-10 md:h-14 lg:h-14 transition-all duration-500 overflow-hidden shrink-0")}
           >
             <Image
-              src={logo || "/logo.jpg"}
+              src={logo || "/logo.png"}
               alt={siteName || "Mumo Travels & Tours"}
               className="object-contain h-full w-auto"
               height={100}
@@ -117,7 +117,7 @@ export function Header({ siteUrl, logo, siteName, description }: { siteUrl: stri
               <Menu className="h-5 w-5 md:h-6 md:w-6" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-280 sm:w-80 bg-card border-l border-border/50">
+          <SheetContent side="right" className="w-60 bg-card border-l border-border/50">
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
             <div className="flex flex-col h-full py-4 md:py-6">
               <div className="flex items-center gap-2 md:gap-3 mb-6 md:mb-10">
