@@ -48,19 +48,10 @@ function PackageCard({ pkg, index }: { pkg: PackageIProps; index: number }) {
                     <div className="pt-4 border-t border-border">
                         <div className=" flex items-center justify-between mb-2">
                             <Button size="sm" variant="outline" asChild>
-                                <Link prefetch={false} href="tel:+8801332-846700">
+                                <Link prefetch={false} href="https://wa.me/8801332846700">
                                     <Phone className=" h-5 w-5" />
                                     Call for Price
                                 </Link>
-                            </Button>
-                            <Button size="sm" variant="outline" className="bg-[#25D366] hover:bg-[#20BD5A] text-white rounded-full" asChild>
-                                <Link prefetch={false}
-                                    href="https://wa.me/8801332846700"
-                                    className="text-lg font-semibold"
-                                >
-                                    <img src="/whatsapp.svg" alt="WhatsApp" className="inline-block h-5 lg:w-16 w-4" />
-                                </Link>
-
                             </Button>
                             <Button size="sm" asChild>
                                 <Link prefetch={false} href="/contact">
